@@ -55,15 +55,15 @@ class TurtleBot:
         goal_pose = Pose()
 
         # Get the input from the user.
-        goal_pose.x = input("Set your x goal: ")
-        goal_pose.y = input("Set your y goal: ")
-        angle = input("Orientation (in degrees):")
+        goal_pose.x = float(input("Set your x goal: "))
+        goal_pose.y = float(input("Set your y goal: "))
+        angle = float(input("Orientation (in degrees):"))
 
         relative_angle = angle*2*pi/360
 
         # Please, insert a number slightly greater than 0 (e.g. 0.01).
-        distance_tolerance = input("Set your tolerance: ")
-        angle_tolerance = input("Set your angle tolerance (in degrees): ")*2*3.141592653589793238462643383279/360
+        distance_tolerance = float(input("Set your tolerance: "))
+        angle_tolerance = float(input("Set your angle tolerance (in degrees): "))*2*pi/360
 
         vel_msg = Twist()
 
