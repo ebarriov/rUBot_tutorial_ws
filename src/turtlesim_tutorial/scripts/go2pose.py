@@ -10,9 +10,11 @@ class TurtleBot:
     def __init__(self):# first you need to define a constructor to initialize the class attributes. "self" relates an object of the class TurtleBot
         # Creates a node with name 'turtlebot_controller' and make sure it is a
         # unique node (using anonymous=True).
+        "self fa referencia als objectes de dins de la funció"
         rospy.init_node('turtlebot_controller', anonymous=True)
 
         # Publisher which will publish to the topic '/turtle1/cmd_vel'.
+        #self.velocity_pub -> es una propietat de l'objecte
         self.velocity_publisher = rospy.Publisher('/turtle1/cmd_vel',
                                                   Twist, queue_size=10)
 
@@ -21,7 +23,7 @@ class TurtleBot:
         self.pose_subscriber = rospy.Subscriber('/turtle1/pose',
                                                 Pose, self.update_pose)
 
-        self.pose = Pose()
+        self.pose = Pose()#objecte de la clase pose()
         self.rate = rospy.Rate(10)
         self.vel_msg = Twist()
 
